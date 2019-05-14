@@ -1,0 +1,19 @@
+type User {
+  id: ID! @id
+  name: String!
+  email: String!
+}
+
+type Task {
+  id: ID! @id
+  title: String!
+  description: String!
+  author: User!
+  tags: [String] @scalarList(strategy:RELATION)
+  priority: String!
+  project: String
+  status: String!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  finishedDate: DateTime
+}

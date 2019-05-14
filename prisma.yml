@@ -1,0 +1,6 @@
+endpoint: https://us1.prisma.sh/joao-paulo/graphql-app/dev
+datamodel: datamodel.prisma
+
+hooks:
+  post-deploy:
+    - graphql get-schema -p prisma
