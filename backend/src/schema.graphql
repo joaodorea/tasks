@@ -1,0 +1,38 @@
+# import * from './generated/prisma.graphql'
+
+type Query {
+  tasks(where: ItemWhereInput, orderBy: ItemOrderByInput, skip: Int, first: Int): [Task]!
+  users(where: String): [User]!
+}
+
+type Mutation {
+  createTask(
+    title: String!
+    description: String!
+    tags: [String]
+    priority: String!
+    project: String
+    status: String!
+  ): Task!
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  tasks: [Task!]!
+}
+
+type Task {
+  id: ID!
+  title: String!
+  description: String!
+  author: User!
+  tags: [String]
+  priority: String!
+  project: String
+  status: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  finishedDate: DateTime
+}
