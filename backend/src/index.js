@@ -5,8 +5,8 @@ const server = createServer();
 server.start(
   {
     cors: {
-      credentials: true,
-      origin: "https://us1.prisma.sh/joao-paulo/graphql-app/dev"
+      credentials: false,
+      origin: "http://localhost:3000"
     }
   },
   deets => {
